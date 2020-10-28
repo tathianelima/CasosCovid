@@ -1,5 +1,6 @@
 package br.com.taubateinformatica.casosCovid.resources;
 
+import br.com.taubateinformatica.casosCovid.domain.CasosPorMes;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,10 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/casosPorMes")
 public class CasosPorMesResource {
 
-    @RequestMapping(method=RequestMethod.GET)
-    public String lista() {
+    @Autowired
+    private CasosPorMesService service;
 
-        return "Testando o Rest";
+    //endpoint para buscar numeros de casos de um mes especifico
 
+    @RequestMapping(value="/{id}", method=RequestMethod.GET)
+    public ResponseEntity<CasosPorMes> find(@PathVariable Integer id) {
+        CasosPorMes obj = service.find(id);
+        return ResponseEntity.ok().body(obj);
     }
 }
