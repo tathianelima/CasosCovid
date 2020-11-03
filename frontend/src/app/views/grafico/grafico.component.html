@@ -1,1 +1,3 @@
-<app-casosPorMes-chart></app-casosPorMes-chart>
+<div *ngIf="chart" class="chart">
+    <canvas id="canvas">{{ chart }}</canvas>
+</div>

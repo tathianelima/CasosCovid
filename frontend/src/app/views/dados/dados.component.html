@@ -1,2 +1,26 @@
-<p>Registro de casos de Covid por cidade</p>
-<app-casosPorMes-read></app-casosPorMes-read>
+<p>Registro de casos de Covid por mês</p>
+<div class="mat-elevation-z4">
+    <table mat-table [dataSource]="casosPorMes">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef >Id</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+  
+      <!-- Mês Column -->
+      <ng-container matColumnDef="mes"> 
+        <th mat-header-cell *matHeaderCellDef>Mês</th>
+        <td mat-cell *matCellDef="let row">{{row.mes}}</td>
+      </ng-container>
+
+      <!-- Casos Column -->
+      <ng-container matColumnDef="casos">
+        <th mat-header-cell *matHeaderCellDef>Casos</th>
+        <td mat-cell *matCellDef="let row">{{row.casos}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+  </div>

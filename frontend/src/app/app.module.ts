@@ -13,11 +13,8 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
 import { DadosComponent } from './views/dados/dados.component';
 import { GraficoComponent } from './views/grafico/grafico.component';
-import { CasosPorMesComponent } from './components/casosPorMes/casosPorMes.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CasosPorMesReadComponent } from './components/casosPorMes/casosPorMes-read/casosPorMes-read.component';
 import { MatTableModule } from '@angular/material/table';
-import { CasosPorMesChartComponent } from './components/casosPorMes/casosPorMes-chart/casosPorMes-chart.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +24,7 @@ import { CasosPorMesChartComponent } from './components/casosPorMes/casosPorMes-
     NavComponent,
     HomeComponent,
     DadosComponent,
-    GraficoComponent,
-    CasosPorMesComponent,
-    CasosPorMesReadComponent,
-    CasosPorMesChartComponent
+    GraficoComponent
   ],
   imports: [
     BrowserModule,
